@@ -5,7 +5,7 @@
 #include "misc.h"
 #include "dungeon.h"
 
-CapApp app;
+DunApp app;
 
 void DlgCallbackFunction(int buttonType, void */*userData*/);
 
@@ -13,7 +13,7 @@ void DlgCallbackFunction(int buttonType, void */*userData*/);
 	_in1 = pPad->bindFilter();	\
 	_in1->setChannel(_in2);	
 
-bool CapApp::onInit(int argc, char **argv) 
+bool DunApp::onInit(int argc, char **argv) 
 {
     // always call the superclass's method
     ::FWGLApplication::onInit(argc, argv);
@@ -42,7 +42,7 @@ bool CapApp::onInit(int argc, char **argv)
     return true;
 }
 
-CapApp::CapApp()
+DunApp::DunApp()
 {
 	mFrame = 0;
 
@@ -57,7 +57,7 @@ CapApp::CapApp()
     // set up mStartupInfo if necessary
 }
 
-void CapApp::dbgFontInit()
+void DunApp::dbgFontInit()
 {
 	// initialize debug font library
 	int ret;
@@ -119,17 +119,17 @@ void CapApp::dbgFontInit()
 	*/
 }
 
-void CapApp::dbgFontDraw()
+void DunApp::dbgFontDraw()
 {
 	::cellDbgFontDraw();
 }
 
-void CapApp::dbgFontExit()
+void DunApp::dbgFontExit()
 {
 	::cellDbgFontExit();
 }
 
-void CapApp::InputFrameStart() 
+void DunApp::InputFrameStart() 
 {
 	squarePressedNow	= mpSquare->getBoolValue();
 	crossPressedNow		= mpCross->getBoolValue();
@@ -145,7 +145,7 @@ void CapApp::InputFrameStart()
 	rightPressedNow		= mpRight->getBoolValue();
 }
 
-void CapApp::InputFrameEnd()
+void DunApp::InputFrameEnd()
 {
 	mIsSquarePressed	= squarePressedNow;
 	mIsCrossPressed		= crossPressedNow;
@@ -161,7 +161,7 @@ void CapApp::InputFrameEnd()
 	mIsRightPressed		= rightPressedNow;
 }
 
-bool CapApp::onUpdate()
+bool DunApp::onUpdate()
 {
 	mFrame++;
     
@@ -174,7 +174,7 @@ bool CapApp::onUpdate()
 	return FWGLApplication::onUpdate();
 }
 
-void CapApp::onRender() 
+void DunApp::onRender() 
 {
     // again, call the superclass method
     FWGLApplication::onRender();
@@ -182,7 +182,7 @@ void CapApp::onRender()
 	dbgFontDraw();
 }
 
-void CapApp::onShutdown() 
+void DunApp::onShutdown() 
 {
 	FWInputDevice *pPad = FWInput::getDevice(FWInput::DeviceType_Pad, 0);
 

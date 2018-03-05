@@ -321,7 +321,7 @@ void c_dungeon::InputFrame()
 		 
 		 if(mode == "end")
 	     {app.onShutdown();
-		exitspawn("/dev_hdd0/game/GPKG00123/USRDIR/RELOAD.SELF", NULL, NULL, NULL, NULL, 64, SYS_PROCESS_PARAM_STACK_SIZE_MAX);
+		exitspawn("/dev_hdd0/game/DUNGEON01/USRDIR/RELOAD.SELF", NULL, NULL, NULL, NULL, 64, SYS_PROCESS_PARAM_STACK_SIZE_MAX);
 	
 		 }
 	}

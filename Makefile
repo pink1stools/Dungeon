@@ -1,13 +1,13 @@
 # -------------------------------------------------------------------
-# gamePKG Makefile [by CaptainCPS-X, 2012-2013]
+
 # -------------------------------------------------------------------
-APP_VER			=1.02
+APP_VER			=1.00
 DATE 			=$(shell date +"%Y%m%d")
 
 PSN_PKG_NPDRM 	= bin/psn_package_npdrm
 
-SELF_APP_VER	=0001000200000000
-CONTENT_ID		=GP4PS3-GPKG00123_00-0000000000000000
+SELF_APP_VER	=0001000000000000
+CONTENT_ID		=DUNPS3-DUNGEON01_00-0000000000000000
 MAKE_SELF_NPDRM = scetool.exe \
 	--sce-type=SELF \
 	--compress-data=TRUE \
@@ -65,6 +65,6 @@ gamePKG: $(PPU_TARGET)
 	@rm $(PPU_TARGET)
 	@cd bin/ && $(MAKE_SELF_NPDRM) ../$(OBJS_DIR)/$(PPU_TARGET) ../release/PS3_GAME/USRDIR/EBOOT.BIN && cd ../
 	@$(PSN_PKG_NPDRM) release/package.conf release/PS3_GAME/
-	@mv *.pkg release/gamePKG_$(APP_VER)_[$(DATE)].pkg	
+	@mv *.pkg release/dungeon_$(APP_VER)_[$(DATE)].pkg	
 
 # -------------------------------------------------------------------

@@ -5,25 +5,7 @@
 #include "main.h"
 #include "dungeon.h"
 #include "misc.h"
-/*
-// Struct compare function for QSORT
-int _FcCompareStruct(const void *a, const void *b) 
-{ 
-    struct c_pkglist *ia = (struct c_pkglist *)a;
-    struct c_pkglist *ib = (struct c_pkglist *)b;
 
-	return strcmp(toLowerCase(ia->title, 256), toLowerCase(ib->title, 256));
-}
-
-// String compare function for QSORT
-int _FcCompareStr(const void *pStrA, const void *pStrB)
-{
-	const bool bAscending = true;	// Always ascending [left as reference]
-    return bAscending ? 
-		strcmp(*(char**)pStrA, *(char**)pStrB):	// Ascending [Ex. A,B,C]
-		strcmp(*(char**)pStrB, *(char**)pStrA); // Descending [Ex. C,B,A]
-}
-*/
 #define addch(str, ch)			\
 	str[strlen(str)]	= ch;	\
 	str[strlen(str)+1]	= '\0';
